@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Ricuras{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'productos/styles.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+    <a href="{% url 'home' %}" class="nav-link">INICIO</a>
+    <a href="{% url 'alfajor' %}" class="nav-link">ALFAJORES</a>
+</nav>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
