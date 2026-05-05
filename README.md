@@ -56,3 +56,31 @@ También se utilizó un Pull Request para integrar los cambios.
 
 ```bash
 python3 manage.py runserver
+
+## 📦 Entrega Segundo Práctico
+
+**Repositorio:**  
+https://github.com/candePicco/primer-practico-django
+
+**Rama:**  
+`segundo-practico`
+
+**Pull Request:**  
+https://github.com/candePicco/primer-practico-django/pull/1
+
+---
+
+### 🧾 Descripción
+
+El segundo práctico fue desarrollado en la rama **“segundo-practico”**.
+
+Se agregaron las siguientes funcionalidades:
+
+- Modelo **Categoria** relacionado con **Alfajor** mediante **ForeignKey**
+- Configuración del panel de administración con **@admin.register** y búsqueda
+- Formularios utilizando **ModelForm**
+- CRUD completo para el modelo Alfajor:
+  - Crear
+  - Listar
+  - Editar
+  - Eliminar
