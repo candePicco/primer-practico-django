@@ -4,14 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Ricuras{% endblock %}</title>
+
     <link rel="stylesheet" href="{% static 'productos/styles.css' %}">
 </head>
+
 <body>
+
     <nav class="navbar">
-    <a href="{% url 'home' %}" class="nav-link">INICIO</a>
-    <a href="{% url 'alfajor' %}" class="nav-link">ALFAJORES</a>
-</nav>
+
+        <a href="{% url 'home' %}" class="nav-link">
+            INICIO
+        </a>
+
+        <a href="{% url 'alfajor' %}" class="nav-link">
+            ALFAJORES
+        </a>
+
+        {% if user.is_authenticated %}
+
+            <span class="nav-link">
+                Hola {{ user.username }}
+            </span>
+
+            <a href="{% url 'logout' %}" class="nav-link">
+                CERRAR SESIÓN
+            </a>
+              <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+    
+
+        <button type="submit" class="boton">
+           CERRAR SECION
+        </button>
+    </form>
+
+        {% else %}
+
+            <a href="{% url 'login' %}" class="nav-link">
+                LOGIN
+            </a>
+
+            <a href="{% url 'registro' %}" class="nav-link">
+                REGISTRO
+            </a>
+
+        {% endif %}
+
+    </nav>
+
     {% block body %}
     {% endblock %}
+
 </body>
 </html>

@@ -1,0 +1,20 @@
+{% extends 'productos/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<div class="contenedor">
+
+    <h1 class="titulo">Iniciar sesión</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="boton">
+            Ingresar
+        </button>
+    </form>
+
+</div>
+{% endblock %}

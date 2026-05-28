@@ -8,7 +8,7 @@ def home(request):
 
 
 def alfajor(request):
-    alfajores = Alfajor.objects.all().order_by("-id")
+    alfajores = Alfajor.objects.filter(activo=True).order_by("-id")
     return render(request, "productos/alfajor.html", {"alfajores": alfajores})
 
 
@@ -19,7 +19,8 @@ def alfajor_listar(request):
 
 def alfajor_crear(request):
     if request.method == "POST":
-        form = AlfajorForm(request.POST)
+        form = AlfajorForm(request.POST, request.FILES)
+
         if form.is_valid():
             form.save()
             return redirect("alfajor_listar")
@@ -33,7 +34,7 @@ def alfajor_editar(request, id):
     alfajor = get_object_or_404(Alfajor, id=id)
 
     if request.method == "POST":
-        form = AlfajorForm(request.POST, instance=alfajor)
+        form = AlfajorForm(request.POST, request.FILES, instance=alfajor)
         if form.is_valid():
             form.save()
             return redirect("alfajor_listar")
@@ -47,7 +48,17 @@ def alfajor_eliminar(request, id):
     alfajor = get_object_or_404(Alfajor, id=id)
 
     if request.method == "POST":
-        alfajor.delete()
+        alfajor.activo = False
+        alfajor.save()
         return redirect("alfajor_listar")
 
     return render(request, "productos/alfajor_confirmar_eliminar.html", {"alfajor": alfajor})
+
+
+def alfajor_toggle(request, id):
+    alfajor = get_object_or_404(Alfajor, id=id)
+
+    alfajor.activo = not alfajor.activo
+    alfajor.save()
+
+    return redirect("alfajor_listar")

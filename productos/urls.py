@@ -9,4 +9,5 @@ urlpatterns = [
     path("alfajor/crear/", views.alfajor_crear, name="alfajor_crear"),
     path("alfajor/editar/<int:id>/", views.alfajor_editar, name="alfajor_editar"),
     path("alfajor/eliminar/<int:id>/", views.alfajor_eliminar, name="alfajor_eliminar"),
+    path("alfajor/toggle/<int:id>/", views.alfajor_toggle, name="alfajor_toggle"),
 ]

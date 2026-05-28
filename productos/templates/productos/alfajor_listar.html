@@ -1,22 +1,58 @@
 {% extends 'productos/base.html' %}
 
 {% block body %}
+
 <h1 class="titulo">CRUD Alfajores</h1>
 
-<a href="{% url 'alfajor_crear' %}" class="boton">Agregar alfajor</a>
+<a href="{% url 'alfajor_crear' %}" class="boton">
+    Agregar alfajor
+</a>
 
 <ul class="lista">
+
 {% for a in alfajores %}
+
 <li class="card">
-<strong>{{ a.nombre }}</strong><br>
-Categoría: {{ a.categoria }}<br>
-Relleno: {{ a.relleno }}<br>
-Precio: ${{ a.precio }}<br>
-<a href="{% url 'alfajor_editar' a.id %}" class="boton">Editar</a>
-<a href="{% url 'alfajor_eliminar' a.id %}" class="boton">Eliminar</a>
+
+    {% if a.imagen %}
+        <img src="{{ a.imagen.url }}" width="150">
+        <br>
+    {% endif %}
+
+    <strong>{{ a.nombre }}</strong><br>
+
+    Categoría: {{ a.categoria }}<br>
+
+    Relleno: {{ a.relleno }}<br>
+
+    Precio: ${{ a.precio }}<br>
+
+    Estado:
+    {% if a.activo %}
+        ✅ Activo
+    {% else %}
+        ❌ Desactivado
+    {% endif %}
+    <br><br>
+
+    <a href="{% url 'alfajor_editar' a.id %}" class="boton">
+        Editar
+    </a>
+
+    <a href="{% url 'alfajor_toggle' a.id %}" class="boton">
+
+        {% if a.activo %}
+            Desactivar
+        {% else %}
+            Activar
+        {% endif %}
+
+    </a>
+
 </li>
+
 {% endfor %}
+
 </ul>
 
 {% endblock %}
-

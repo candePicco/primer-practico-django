@@ -1,0 +1,20 @@
+{% extends 'productos/base.html' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block body %}
+<div class="contenedor">
+
+    <h1 class="titulo">Registro</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="boton">
+            Registrarse
+        </button>
+    </form>
+
+</div>
+{% endblock %}

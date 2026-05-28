@@ -1,10 +1,26 @@
-
 {% extends 'productos/base.html' %}
+{% load static %}
 
 {% block title %}Inicio{% endblock %}
 
 {% block body %}
-<h1 class="titulo">Bienvenido a Ricuras</h1>
-<p class="subtituloprincipal">Emprendimiento de chocolatería y alfajores</p>
-<h2 class="piepagina"> -- Hecho con amor 💚 -- </h2>
+
+<div class="contenedor">
+
+    <img src="{% static 'productos/logo.png' %}" class="logo">
+
+    <h1 class="titulo">
+        Bienvenido a Ricuras
+    </h1>
+
+    <p class="subtituloprincipal">
+        Emprendimiento de chocolatería y alfajores
+    </p>
+
+</div>
+
+<footer class="piepagina">
+    -- Hecho con amor 💚 --
+</footer>
+
 {% endblock %}
