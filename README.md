@@ -2,85 +2,125 @@
 
 Proyecto realizado para la materia Desarrollo de Software.
 
-## 📌 Descripción
+---
 
-Aplicación web desarrollada con Django que permite gestionar alfajores.
+# Descripción
+
+Aplicación web desarrollada con Django que permite gestionar alfajores y productos de chocolatería.
 
 ---
 
-## 🧩 Primer práctico
+# Primer práctico
 
-- Creación del proyecto Django
-- Aplicación "productos"
-- Vistas y templates
-- Estilos básicos
+* Creación del proyecto Django
+* Aplicación `productos`
+* Vistas y templates
+* Estilos básicos
+* Navegación entre páginas
 
 ---
 
-## 🚀 Segundo práctico
+# Segundo práctico
 
 Se agregaron nuevas funcionalidades:
 
-- ✔ Modelo **Categoria**
-- ✔ Relación entre modelos (ForeignKey)
-- ✔ Panel de administración con búsqueda (@admin.register)
-- ✔ Formularios con ModelForm
-- ✔ CRUD completo:
-  - Crear alfajores
-  - Listar alfajores
-  - Editar alfajores
-  - Eliminar alfajores
+* ✔ Modelo `Categoria`
+* ✔ Relación entre modelos mediante `ForeignKey`
+* ✔ Panel de administración con búsqueda (`@admin.register`)
+* ✔ Formularios utilizando `ModelForm`
+* ✔ CRUD completo de Alfajores:
+
+  * Crear
+  * Listar
+  * Editar
+  * Eliminar
 
 ---
 
-## 🌿 Control de versiones
+# Tercer práctico
 
-El segundo práctico se desarrolló en la rama:
+Se implementaron nuevos conceptos vistos en clase:
 
-👉 `segundo-practico`
-
-También se utilizó un Pull Request para integrar los cambios.
-
----
-
-## 🛠 Tecnologías
-
-- Python
-- Django
-- HTML / CSS
-- Git y GitHub
+* ✔ User personalizado utilizando `AbstractUser`
+* ✔ Registro de usuarios
+* ✔ Login y Logout
+* ✔ Templates para autenticación
+* ✔ Campo `ImageField()` funcional con Pillow
+* ✔ Subida de imágenes para alfajores
+* ✔ Activación y desactivación de productos
+* ✔ Templates con estilos CSS personalizados
+* ✔ Configuración de `MEDIA_URL` y `MEDIA_ROOT`
 
 ---
 
-## ▶️ Cómo ejecutar el proyecto
+# Control de versiones
+
+El proyecto fue desarrollado utilizando ramas en GitHub:
+
+* `segundo-practico`
+* `tercer-practico`
+
+También se utilizaron Pull Requests para integrar los cambios.
+
+---
+
+# Tecnologías utilizadas
+
+* Django
+* HTML
+* CSS
+* SQLite3
+* Git
+* GitHub
+
+---
+
+# Cómo ejecutar el proyecto
+
+Activar entorno virtual:
+
+```bash
+source venv/bin/activate
+```
+
+Ejecutar servidor:
 
 ```bash
 python3 manage.py runserver
+```
 
-## 📦 Entrega Segundo Práctico
+---
 
-**Repositorio:**  
+# Entrega Segundo Práctico
+
+## Repositorio
+
 https://github.com/candePicco/primer-practico-django
 
-**Rama:**  
+## Rama
+
 `segundo-practico`
 
-**Pull Request:**  
+## Pull Request
+
 https://github.com/candePicco/primer-practico-django/pull/1
 
 ---
 
-### 🧾 Descripción
+# Entrega Tercer Práctico
 
-El segundo práctico fue desarrollado en la rama **“segundo-practico”**.
+## Repositorio
 
-Se agregaron las siguientes funcionalidades:
+https://github.com/candePicco/primer-practico-django
 
-- Modelo **Categoria** relacionado con **Alfajor** mediante **ForeignKey**
-- Configuración del panel de administración con **@admin.register** y búsqueda
-- Formularios utilizando **ModelForm**
-- CRUD completo para el modelo Alfajor:
-  - Crear
-  - Listar
-  - Editar
-  - Eliminar
+## Rama
+
+`tercer-practico`
+
+---
+
+# Integrantes
+
+* Candela Picco
+* Federico Ramirez
+* Juan Laporte 
