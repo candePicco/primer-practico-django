@@ -1,27 +1,48 @@
-
 {% extends 'productos/base.html' %}
 
 {% block title %}Alfajores{% endblock %}
 
 {% block body %}
 <div class="contenedor">
+
     <h1 class="titulo">Alfajores Ricuras</h1>
 
     <h2 class="subtitulos">Nuestros alfajores</h2>
 
     <ul class="lista">
+
         {% for alfajor in alfajores %}
+
             <li class="card">
+
+                {% if alfajor.imagen %}
+                    <img src="{{ alfajor.imagen.url }}" width="150">
+                    <br>
+                {% endif %}
+
                 <strong>{{ alfajor.nombre }}</strong><br>
+
                 Categoría: {{ alfajor.categoria }}<br>
+
                 Relleno: {{ alfajor.relleno }}<br>
+
                 Precio: ${{ alfajor.precio }}
+
             </li>
+
         {% empty %}
-            <li class="card">No hay alfajores cargados todavía.</li>
+
+            <li class="card">
+                No hay alfajores cargados todavía.
+            </li>
+
         {% endfor %}
+
     </ul>
 
-    <a href="{% url 'home' %}" class="boton">Volver al inicio</a>
+    <a href="{% url 'home' %}" class="boton">
+        Volver al inicio
+    </a>
+
 </div>
 {% endblock %}

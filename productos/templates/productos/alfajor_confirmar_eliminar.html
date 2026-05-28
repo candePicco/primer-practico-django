@@ -1,0 +1,13 @@
+{% extends 'productos/base.html' %}
+
+{% block body %}
+<h1 class="titulo">Eliminar Alfajor</h1>
+
+<p>¿Seguro que querés eliminar {{ alfajor.nombre }}?</p>
+
+<form method="post">
+{% csrf_token %}
+<button type="submit" class="boton">Sí, eliminar</button>
+</form>
+
+{% endblock %}
